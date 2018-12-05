@@ -6,17 +6,17 @@ import course3.journeyEntities.Journey;
 import java.util.*;
 
 public class PersonalCabinetClient extends PersonalCabinet{
-    private int clientId;
+    public static int lastId = 0;
     private Map<Journey, Boolean> journeys;
     private int healthStatus;
     List<Journey> placeToVisit;
     List<Journey> wishlist;
 
-    //clientid must be taken from DataBase
-    public PersonalCabinetClient(String email, String password, String name, String surname, String phoneNumber,
-                                 int clientId) {
+    {
+        this.userId = ++lastId;
+    }
+    public PersonalCabinetClient(String email, String password, String name, String surname, String phoneNumber) {
         super(email, password, name, surname, phoneNumber);
-        this.clientId = clientId;
         journeys = new HashMap<>();
         placeToVisit = new ArrayList<>();
         wishlist = new ArrayList<>();
@@ -27,10 +27,6 @@ public class PersonalCabinetClient extends PersonalCabinet{
             throw new NonValidHealthStatusException();
         }
         this.healthStatus = healthStatus;
-    }
-
-    public int getClientId() {
-        return clientId;
     }
 
     public Map<Journey, Boolean> getJourneys() {

@@ -7,8 +7,13 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class PersonalCabinetServiceProvider extends PersonalCabinet {
+    public static int lastId = 0;
     private String website;
     private List<Service> services;
+
+    {
+        this.userId = ++lastId;
+    }
 
     public PersonalCabinetServiceProvider(String email, String password, String name, String surname, String phoneNumber) {
         super(email, password, name, surname, phoneNumber);

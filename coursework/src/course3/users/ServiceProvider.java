@@ -23,4 +23,8 @@ public class ServiceProvider {
     public void updatePersonalCabinet(PersonalCabinetServiceProvider personalCabinet){
         this.personalCabinet = personalCabinet;
     }
+
+    public List<Service> getServices() {
+        return services;
+    }
 }

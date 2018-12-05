@@ -4,6 +4,7 @@ import course3.Photo;
 import course3.Question;
 
 public class PersonalCabinet {
+    protected int userId;
     private String email;
     private String password;
     private String name;
@@ -23,6 +24,14 @@ public class PersonalCabinet {
         this.phoneNumber = phoneNumber;
         this.complain = 0;
         this.state = true;
+    }
+
+    public int getUserId() {
+        return userId;
+    }
+
+    public boolean isState() {
+        return state;
     }
 
     public String getEmail() {
